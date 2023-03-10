@@ -1,0 +1,43 @@
+<%-include('nav.ejs')%>
+
+    <form action="/admin/save_furniture" method="post">
+        <div class="container-fluid p-3 bg-white">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="text-center mb-4">Add new Furniture </h2>
+                </div>
+                <div class="col-md-12">
+                    <label for="">Enter Furniture Type</label>
+                    <input type="text" name="furniture_type" class="form-control">
+                </div>
+                <div class="col-md-12 text-center mt-3">
+                    <button class="btn btn-success">Add</button>
+                </div>
+            </div>
+        </div>
+    </form><br><br>
+
+    <div class="container-fluid p-3 bg-white">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="text-center mb-4">All Furniture list </h2>
+            </div>
+            <div class="col-md-12">
+                <table class="table table-bordered table-sm">   
+                    <tr class="text-center">
+                        <th>Sr. no</th>
+                        <th>Subject Name</th>
+                    </tr>
+                    <% for(i = 0; i<furniture.length;i++){ %>
+                        <tr class="text-center">
+                            <td><%=i+1%></td>
+                            <td><%=furniture[i].types%></td>
+                        </tr>
+                    <% } %>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+<%-include('footer.ejs')%>

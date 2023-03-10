@@ -1,0 +1,43 @@
+<%-include('nav.ejs')%>
+
+<form action="/admin/show_furniture" method="post" enctype="multipart/form-data">
+    <div class="container-fluid p-3 bg-white">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="text-center mb-4">Show Furniture</h2>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label for="">Furniture Type</label>
+                <select name="id" required class="form-control">
+                    <option disabled selected value="">Select Furniture</option>
+                    <% for(i=0; i<furniture.length;i++) { %>
+                        <option value="<%=furniture[i]['id']%>">
+                            <%=furniture[i]['types']%>
+                        </option>
+                        <% } %>
+                </select>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label for="">Material Used</label>
+                <input type="text" class="form-control" name="furniture_material" required>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label for="">Price</label>
+                <input type="number" name="furniture_price" class="form-control" required>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="">Image</label>
+                <input type="file" name="furniture_image" class="form-control" required>
+            </div>
+            
+
+            <div class="col-md-12 mt-4 mb-3 text-right">
+                <button class="btn btn-success">Done</button>
+            </div>
+        </div>
+    </div>
+</form>
+<%-include('footer.ejs')%>

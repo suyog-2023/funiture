@@ -1,0 +1,77 @@
+<%- include("nav.ejs")%>
+    
+    
+        <section id="hero">
+            <h4 style="color: rgb(225, 34, 34);">Trade-in-offer</h4>
+            <h2 style="color: rgb(220, 42, 11);">Super value deals</h2>
+            <h1 style="color: rgb(255, 123, 0);">On all Products</h1>
+            <button>Shop Now</button>
+        </section>
+    
+    
+        <section id="product1" class="section-p1">
+            <h2>Featured Products</h2>
+            <p>Summer Collection New Modern Design</p>
+            <% for(i=0; i<furniture_list.length;i++) { %>
+            <div class="pro-container">
+                <div class="pro">
+                    <img src="uploads/<%=furniture_list[i]['furniture_image']%>" alt="card Image">
+                    <div class="des">
+                        <span><%=furniture_list[i]['furniture_material']%></span>
+                        <h5><%=furniture_list[i]['furniture_type']%></h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>Rs. <%=furniture_list[i]['furniture_price']%></h4>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+
+        </section>
+    
+        <section id="sm-banner" class="section-p1">
+            <div class="banner-box">
+                <h4>Crazy Deals</h4>
+                <h2>Buy 1 get 1 Free!</h2>
+                <span>The best classic dress is on sale at cara</span>
+                <button class="white">Learn More</button>
+            </div>
+    
+            <div class="banner-box banner-box2">
+                <h4>Spring/Summer</h4>
+                <h2>Upcoming Season</h2>
+                <span>The best classic dress is on sale at cara</span>
+                <button class="white">Collection</button>
+            </div>
+    
+        </section>
+    
+        <section id="banner3">
+            <div class="banner-box">
+    
+                <h2>SEASONAL SALE</h2>
+                <h3>Winter Collection -50% OFF</h3>
+    
+            </div>
+            <div class="banner-box banner-box2">
+    
+                <h2>SEASONAL SALE</h2>
+                <h3>Winter Collection -50% OFF</h3>
+    
+            </div>
+            <div class="banner-box banner-box3">
+    
+                <h2>SEASONAL SALE</h2>
+                <h3>Winter Collection -50% OFF</h3>
+    
+            </div>
+        </section>
+    
+    
+        
+<%- include("footer.ejs")%>
